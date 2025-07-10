@@ -44,16 +44,6 @@ To reproduce our experiments:
 
 ## Methods and Implementation
 
-### Integer Programming Model
-
-The mathematical formulation includes:
-
-* Conflict minimization via edge activation
-* Penalties for placing conflicting students nearby
-* Spatial constraints of desks and minimum distance
-
-Implemented using **Python**.
-
 ### ILS Heuristic
 
 The ILS searches through the solution space allowing minor constraint violations but penalizing them in the cost function. This provides flexibility and fast approximate solutions suitable for large instances.
