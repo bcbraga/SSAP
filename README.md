@@ -28,7 +28,6 @@ To use or reference the resources in this repository, please cite the following 
 * **/instances/**: Real and synthetic datasets used in the experiments
 * **/heuristic/**: Implementation of the ILS and ILSR metaheuristics
 * **/results/**: Computational results (solver vs. heuristics)
-* **/paper/**: Full research article (when public)
 
 ## Getting Started
 
