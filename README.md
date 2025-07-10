@@ -44,6 +44,8 @@ To reproduce our experiments:
 
 ## Methods and Implementation
 
+Both ILS and ILSR were implemented in Python.
+
 ### ILS Heuristic
 
 The ILS searches through the solution space allowing minor constraint violations but penalizing them in the cost function. This provides flexibility and fast approximate solutions suitable for large instances.
