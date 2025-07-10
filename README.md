@@ -44,7 +44,7 @@ To reproduce our experiments:
 
 ## Methods and Implementation
 
-Both ILS and ILSR were implemented in Python.
+Both heuristics are implemented in pure Python and were designed with future integration into an educational decision-support system in mind.
 
 ### ILS Heuristic
 
@@ -53,8 +53,6 @@ The ILS searches through the solution space allowing minor constraint violations
 ### ILS with Restart (ILSR)
 
 ILSR enhances diversification by restarting the search after a defined number of iterations without improvement. This strategy helps overcome local optima and increases robustness in more complex scenarios.
-
- Both heuristics are implemented in pure Python and were designed with future integration into an educational decision-support system in mind.
 
 ## Experimental Results
 
