@@ -11,8 +11,7 @@ distance between students with known conflicts, while respecting the spatial con
 To tackle this problem, we propose:
 
 * An **Integer Linear Programming** (ILP) formulation;
-* An efficient **Iterated Local Search (ILS)** heuristic for large and complex instances;
-* Two versions of the heuristic: **ILS** (standard) and **ILSR** (with restart for diversification).
+* An efficient **Iterated Local Search (ILS)** heuristic for large and complex instances.
 
 The ILS heuristic is capable of generating near-optimal or relaxed solutions by assigning students to specific desks within a traditional classroom setting, where desks are arranged in parallel rows. This approach supports teachers by offering 
 practical student-to-desk assignments that minimize interpersonal conflicts while respecting spatial and distance constraints.
@@ -26,7 +25,7 @@ To use or reference the resources in this repository, please cite the following 
 ## Repository Contents
 
 * **/instances/**: Real and synthetic datasets used in the experiments
-* **/heuristic/**: Implementation of the ILS and ILSR metaheuristics
+* **/heuristic/**: Implementation of the ILS metaheuristic
 * **/results/**: Computational results (solver vs. heuristics)
 
 ## Getting Started
@@ -38,28 +37,24 @@ To reproduce our experiments:
 3. Run the desired module:
 
    * `python heuristic/ssap_ils.py` for ILS heuristic
-   * `python heuristic/ssap_ilsr.py` for ILS with Restart
+
 4. Sample input and output data are available in `/instances` and `/results`.
 
 ## Methods and Implementation
 
-Both heuristics are implemented in pure Python and were designed with future integration into an educational decision-support system in mind.
+The ILS heuristic was implemented in pure Python and was designed with future integration into an educational decision-support system in mind.
 
 ### ILS Heuristic
 
 The ILS searches through the solution space allowing minor constraint violations but penalizing them in the cost function. This provides flexibility and fast approximate solutions suitable for large instances.
 
-### ILS with Restart (ILSR)
-
-ILSR enhances diversification by restarting the search after a defined number of iterations without improvement. This strategy helps overcome local optima and increases robustness in more complex scenarios.
-
 ## Experimental Results
 
 * **Benchmarking**: Optimal solutions were obtained for several instances using the Gurobi solver.
 
-* **Heuristic Comparison**: ILS and ILSR were evaluated against these optimal results on runtime and quality.
+* **Heuristic Comparison**: ILS was evaluated against these optimal results on runtime and quality.
 
-* **Performance**: Both heuristics produced high-quality solutions across all datasets.
+* **Performance**: ILS heuristic produced high-quality solutions across all datasets.
 
 ## Future Work
 
