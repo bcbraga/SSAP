@@ -43,9 +43,8 @@ To reproduce our experiments:
 
 ## Method and Implementation
 
-The ILS heuristic was implemented in pure Python and was designed with future integration into an educational decision-support system in mind.
+The ILS heuristic was implemented in pure Python and designed with future integration into an educational decision-support system in mind. It explores the solution space by allowing minor constraint violations, which are penalized in the cost function, enabling flexible and fast approximate solutions suitable for large instances.
 
-The ILS searches through the solution space allowing minor constraint violations but penalizing them in the cost function. This provides flexibility and fast approximate solutions suitable for large instances.
 
 ## Experimental Results
 
