@@ -40,11 +40,9 @@ To reproduce our experiments:
 
 4. Sample input and output data are available in `/instances` and `/results`.
 
-## Methods and Implementation
+## Method and Implementation
 
 The ILS heuristic was implemented in pure Python and was designed with future integration into an educational decision-support system in mind.
-
-### ILS Heuristic
 
 The ILS searches through the solution space allowing minor constraint violations but penalizing them in the cost function. This provides flexibility and fast approximate solutions suitable for large instances.
 
