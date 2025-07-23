@@ -20,3 +20,5 @@ This folder contains synthetic instances generated for the Student Seat Allocati
   Describes the physical layout of the classroom with a vector showing the number of seats per row (i.e., desks per row).
 
 Each file shares a consistent instance ID so they can be easily cross-referenced.
+
+**Note**: Instances for which the solver reported infeasible solutions were removed from the dataset. As a result, out of the 135 originally generated instances, 131 were used in the experiments.
