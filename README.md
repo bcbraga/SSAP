@@ -26,7 +26,8 @@ To use or reference the resources in this repository, please cite the following 
 
 * **/instances/**: Real and synthetic datasets used in the experiments
 * **/heuristic/**: Implementation of the ILS metaheuristic
-* **/results/**: Computational results (solver vs. heuristics)
+* **/results/**: Computational results obtained using the Gurobi solver. Since Gurobi provides optimal (or near-optimal) solutions for most instances, these results serve as a reference benchmark. Results from the ILS metaheuristic are presented in the accompanying paper.
+
 
 ## Getting Started
 
