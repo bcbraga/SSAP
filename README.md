@@ -40,7 +40,7 @@ To reproduce our experiments:
    * Results will be automatically generated in: `res_heur/`
 4. Run the desired module:
    * `python heuristic/SSAP_ILS.py` for the ILS heuristic
-5. 4. Sample input and output data are available in `/instances` and `/results`.
+5. Sample input and output data are available in `/instances` and `/results`.
 
 
 ## Method and Implementation
