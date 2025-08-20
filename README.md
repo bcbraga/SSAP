@@ -34,12 +34,14 @@ To use or reference the resources in this repository, please cite the following 
 To reproduce our experiments:
 
 1. Clone this repository.
-2. Install required dependencies listed in `requirements.txt`.
-3. Run the desired module:
+2. Install the required dependencies listed in `heuristic/requirements.txt`.
+3. Prepare the folders:
+   * Place all input instances in the folder: `data/`
+   * Results will be automatically generated in: `res_heur/`
+4. Run the desired module:
+   * `python heuristic/SSAP_ILS.py` for the ILS heuristic
+5. 4. Sample input and output data are available in `/instances` and `/results`.
 
-   * `python heuristic/SSAP_ILS.py` for ILS heuristic
-
-4. Sample input and output data are available in `/instances` and `/results`.
 
 ## Method and Implementation
 
