@@ -37,7 +37,7 @@ To reproduce our experiments:
 2. Install required dependencies listed in `requirements.txt`.
 3. Run the desired module:
 
-   * `python heuristic/ssap_ils.py` for ILS heuristic
+   * `python heuristic/SSAP_ILS.py` for ILS heuristic
 
 4. Sample input and output data are available in `/instances` and `/results`.
 
