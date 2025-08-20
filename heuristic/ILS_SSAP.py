@@ -1594,11 +1594,11 @@ total_exec = 1
 
 def main():
     # read the data
-    nome_arquivo = 'data2/grafo.txt'
-    nome_arquivo2 = 'data2/grafo_vet.txt'
-    nome_arquivo3 = 'data2/grafo_frente.txt'
-    nome_arquivo4 = 'data2/grafo_tras.txt'
-    nome_arquivo5 = 'data2/grafo_info.txt'
+    nome_arquivo = 'data/grafo.txt'
+    nome_arquivo2 = 'data/grafo_vet.txt'
+    nome_arquivo3 = 'data/grafo_frente.txt'
+    nome_arquivo4 = 'data/grafo_tras.txt'
+    nome_arquivo5 = 'data/grafo_info.txt'
 
     dicionario_arestas = ler_arestas_por_id(nome_arquivo)
     dicionario_elementos = ler_elementos_por_id(nome_arquivo2)
@@ -1609,12 +1609,12 @@ def main():
     # total run
     for ru in np.arange(total_run):
 
-        arq_heur = open('res_heur2/heuristica_' + str(ru + 1) + '.txt', 'a')
-        arq_heur2 = open('res_heur2/info_' + str(ru + 1) + '.txt', 'a')
+        arq_heur = open('res_heur/heuristica_' + str(ru + 1) + '.txt', 'a')
+        arq_heur2 = open('res_heur/info_' + str(ru + 1) + '.txt', 'a')
 
-        arq_heur0 = open('res_heur2/ini_solution_' + str(ru + 1) + '.txt', 'a')
-        arq_heur1 = open('res_heur2/refin_pre_' + str(ru + 1) + '.txt', 'a')
-        arq_heur3 = open('res_heur2/refin_pos_' + str(ru + 1) + '.txt', 'a')
+        arq_heur0 = open('res_heur/ini_solution_' + str(ru + 1) + '.txt', 'a')
+        arq_heur1 = open('res_heur/refin_pre_' + str(ru + 1) + '.txt', 'a')
+        arq_heur3 = open('res_heur/refin_pos_' + str(ru + 1) + '.txt', 'a')
 
         # Sweep each instance
         for instancia in np.arange(exe):
