@@ -7,7 +7,7 @@ This folder contains real instances collected. Each instance is described using 
 - **`grafo.txt`**  
   Contains the edge list for each instance. Each line includes the instance ID and the list of edges (student conflicts).
 
-- **`grafo_atras.txt`**  
+- **`grafo_tras.txt`**  
   Lists students who should be seated in the back rows.
 
 - **`grafo_frente.txt`**  
