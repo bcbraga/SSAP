@@ -1583,7 +1583,7 @@ def trocar_nos(s_viz, nos_a_mover, g0, d_min0, r0):
 
 
 # Total number of instances
-exe = 135
+exe = 131
 
 # Total number of algorithm runs - external / robustness (set between 30 and 100)
 total_run = 30
