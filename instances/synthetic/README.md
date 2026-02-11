@@ -7,7 +7,7 @@ This folder contains synthetic instances generated for the Student Seat Allocati
 - **`grafo.txt`**  
   Contains the edge list for each instance. Each line includes the instance ID, the list of edges (student conflicts), and the repetition index (0–4) corresponding to one of five instances generated under the same configuration.
 
-- **`grafo_atras.txt`**  
+- **`grafo_tras.txt`**  
   Lists students who should be seated in the back rows.
 
 - **`grafo_frente.txt`**  
