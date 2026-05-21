@@ -644,7 +644,7 @@ def busca1_otimizada(sala__, n_, s_, frente_, atras_, edges_):
     vet = converter_sala_para_vetor(sala_)
 
     (fr, at, p2, p3, p1, som_z) = pre_obj(sala_, edges_, frente_, atras_)
-    f0_temp = objective(len(p1), som_z, len(edges_))
+    f0_temp = objective(len(p1), som_z, len(edges_)*max(n_)+1)
     f0 = penalizar_obj(f0_temp, len(fr), len(at), len(p2), len(p3))
 
     vet0 = vet.copy()
@@ -662,7 +662,7 @@ def busca1_otimizada(sala__, n_, s_, frente_, atras_, edges_):
 
                     clas = converter_vetor_para_sala(vet0, n_)
                     (fr1, at1, p2_, p3_, p1_, ss_) = pre_obj(clas, edges_, frente_, atras_)
-                    f_temp = objective(len(p1_), ss_, len(edges_))
+                    f_temp = objective(len(p1_), ss_, len(edges_)*max(n_)+1)
                     f = penalizar_obj(f_temp, len(fr1), len(at1), len(p2_), len(p3_))
 
                     if f > f0:
@@ -681,7 +681,7 @@ def busca1_otimizada(sala__, n_, s_, frente_, atras_, edges_):
     vet0 = [None if x == -1 else x for x in vet0]
     sala_final = converter_vetor_para_sala(vet0, n_)
     (fr1f, at1f, p2_f, p3_f, p1_f, ss_2) = pre_obj(sala_final, edges_, frente_, atras_)
-    f_final0 = objective(len(p1_f), ss_2, len(edges_))
+    f_final0 = objective(len(p1_f), ss_2, len(edges_)*max(n_)+1)
     f_final = penalizar_obj(f_final0, len(fr1f), len(at1f), len(p2_f), len(p3_f))
 
     return sala_final, f_final
