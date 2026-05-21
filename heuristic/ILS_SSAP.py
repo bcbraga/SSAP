@@ -799,7 +799,7 @@ def busca_diversificadora_aleatoria(sala_inicial, n_config, arestas_conflito, r_
         for fileira_idx, row in enumerate(best_sala_global):
             alunos_na_fileira = [aluno for aluno in row if aluno is not None]
             if alunos_na_fileira:
-                percentual_sorteado_para_fileira = 0.25
+                percentual_sorteado_para_fileira = 0.15
                 num_to_sample_in_row = max(min_alunos_por_fileira,
                                            int(len(alunos_na_fileira) * percentual_sorteado_para_fileira))
                 num_to_sample_in_row = min(num_to_sample_in_row, len(alunos_na_fileira))
@@ -864,7 +864,7 @@ def busca_diversificadora_aleatoria(sala_inicial, n_config, arestas_conflito, r_
             num_candidatos_gerados = len(candidato_a_troca_pos)
 
             min_swaps_por_aluno = 8
-            percentual_candidatos_a_avaliar = 0.50
+            percentual_candidatos_a_avaliar = 0.15
             max_swaps_por_aluno = 30
 
             limite_dinamico_percentual = int(num_candidatos_gerados * percentual_candidatos_a_avaliar)
@@ -1636,6 +1636,14 @@ def main():
 
             # desks per layer
             n0 = dicionario_elementos[instancia + 1]
+
+            # total edges
+            ta = g0.number_of_edges()
+
+            n_lambda = max(n0)
+
+            # Active edge weight
+            peso = ta * n_lambda
 
             # total layers
             c = len(n0)
