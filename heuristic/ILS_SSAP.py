@@ -1192,7 +1192,7 @@ def trocar_elemento(vector, elemento, intervalos, front, back, edg, vec_n0):
         clas_f = converter_vetor_para_sala(vector0, vec_n0)
         fr1_f, at1_f, p2_f, p3_f, p1_f, sum_05 = pre_obj(clas_f, edg, front, back)
         fact1_05, fact1_05_n = verify(len(fr1_f), len(at1_f), len(p2_f), len(p3_f))
-        return objective(len(p1_f), sum_05, len(edg)) - pow(10, 7) * fact1_05_n, fact1_05, fact1_05_n
+        return objective(len(p1_f), sum_05, len(edg)*max(vec_n0)+1) - pow(10, 7) * fact1_05_n, fact1_05, fact1_05_n
 
     try:
         posicao_elemento = vector.index(elemento)
@@ -1269,11 +1269,11 @@ def aresta_ativa_min(s_melhor_, s_melhor_fo_, g0_, g0_edges, frente0_, atras0_, 
 
 
 # REFINEMENT PART 2 - MAXIMUM DISTANCES
-def distancias_max(res_best_2, fo_res_best_2, g0_edges_2, frente0_2, atras0_2, p1_test1_2_):
+def distancias_max(res_best_2, fo_res_best_2, g0_edges_2, frente0_2, atras0_2, p1_test1_2_, peso0_2):
     def evaluate_class(sa_la2):
         fr1_f2, at1_f2, p2_f2, p3_f2, p1_f2, soma_06 = pre_obj(sa_la2, g0_edges_2, frente0_2, atras0_2)
         fact1_06, fact1_06_ = verify(len(fr1_f2), len(at1_f2), len(p2_f2), len(p3_f2))
-        return objective(len(p1_f2), soma_06, len(g0_edges_2)) - pow(10, 7) * fact1_06_, fact1_06
+        return objective(len(p1_f2), soma_06, peso0_2+1) - pow(10, 7) * fact1_06_, fact1_06
 
     lista_cop = res_best_2[:]
     lista_cop_fo = fo_res_best_2
@@ -1736,7 +1736,7 @@ def main():
                 # Check feasibility after insertions
                 (var1, var2, var3, var4, var5, var6) = pre_obj(sala_atualizada_z, g0.edges(), frente0, atras0)
                 var_fact0, num_fact = verify(len(var1), len(var2), len(var3), len(var4))
-                f_sala_atualizada_z0 = objective(len(var5), var6, len(g0.edges()))
+                f_sala_atualizada_z0 = objective(len(var5), var6, peso+1)
                 f_sala_atualizada_z = penalizar_obj2(f_sala_atualizada_z0, num_fact)
 
                 # -----------------------------------------------------------------------------------------------------
