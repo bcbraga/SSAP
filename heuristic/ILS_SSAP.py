@@ -531,9 +531,9 @@ def pre_obj(sal_, edge_, frt_, atr_):
 
 
 # Return value of the objective function
-def objective(aa, ss, num_arest_0):
+def objective(aa, ss, num_arest_timesmaxn):
     # Objective function according to model
-    value = ss - num_arest_0 * abs(aa)
+    value = ss - 2 * num_arest_timesmaxn * abs(aa)
 
     return value
 
@@ -774,7 +774,7 @@ def busca_diversificadora_aleatoria(sala_inicial, n_config, arestas_conflito, r_
 
     fr_orig, at_orig, p2_orig, p3_orig, p1_orig, som_dist_orig = pre_obj(current_sala, arestas_conflito,
                                                                          temp_frente_alunos, temp_atras_alunos)
-    f_orig = penalizar_obj(objective(len(p1_orig), som_dist_orig, len(arestas_conflito)), len(fr_orig), len(at_orig),
+    f_orig = penalizar_obj(objective(len(p1_orig), som_dist_orig, len(arestas_conflito)*max(n_config)+1), len(fr_orig), len(at_orig),
                            len(p2_orig), len(p3_orig))
 
     best_sala_global = copy.deepcopy(current_sala)
@@ -881,7 +881,7 @@ def busca_diversificadora_aleatoria(sala_inicial, n_config, arestas_conflito, r_
                 fr_temp, at_temp, p2_temp, p3_temp, p1_temp, som_dist_temp = pre_obj(best_sala_global, arestas_conflito,
                                                                                      temp_frente_alunos,
                                                                                      temp_atras_alunos)
-                f_temp = penalizar_obj(objective(len(p1_temp), som_dist_temp, len(arestas_conflito)), len(fr_temp),
+                f_temp = penalizar_obj(objective(len(p1_temp), som_dist_temp, len(arestas_conflito)*max(n_config)+1), len(fr_temp),
                                        len(at_temp), len(p2_temp), len(p3_temp))
 
                 # Acceptance criterion: strictly better (MAXIMIZATION)
@@ -963,7 +963,7 @@ def busca_indiv_ativas(sala_o, f_o, n_o, frente_o, atras_o, edges_o):
         clas_f = converter_vetor_para_sala(vector, n_o)
         fr1_f, at1_f, p2_f, p3_f, p1_f, soma_02_f = pre_obj(clas_f, edges_o, frente_o, atras_o)
         fact1_02, fact1_02_ = verify(len(fr1_f), len(at1_f), len(p2_f), len(p3_f))
-        return objective(len(p1_f), soma_02_f, tot_e) - pow(10, 7) * fact1_02_, fact1_02, fact1_02
+        return objective(len(p1_f), soma_02_f, tot_e*max(n_o)+1) - pow(10, 7) * fact1_02_, fact1_02, fact1_02
 
     if not fr and not at and not p2 and not p3:
         return converter_vetor_para_sala(vet0, n_o), f0
@@ -991,7 +991,7 @@ def busca_indiv_front(sala_o, f_o, n_o, frente_o, atras_o, edges_o, c_front):
         clas_f = converter_vetor_para_sala(vector, n_o)
         fr1_f, at1_f, p2_f, p3_f, p1_f, soma_01_f = pre_obj(clas_f, edges_o, frente_o, atras_o)
         fact1_01, fact1_01_ = verify(len(fr1_f), len(at1_f), len(p2_f), len(p3_f))
-        return objective(len(p1_f), soma_01_f, tot_e) - pow(10, 7) * fact1_01_, fact1_01
+        return objective(len(p1_f), soma_01_f, tot_e*max(n_o)+1) - pow(10, 7) * fact1_01_, fact1_01
 
     if not fr and not at and not p2 and not p3 and not p1:
         return converter_vetor_para_sala(vet0, n_o), f0
@@ -1018,7 +1018,7 @@ def busca_indiv_back(sala_o, f_o, n_o, frente_o, atras_o, edges_o, c_back):
         clas_f = converter_vetor_para_sala(vector, n_o)
         fr1_f, at1_f, p2_f, p3_f, p1_f, soma_00_f = pre_obj(clas_f, edges_o, frente_o, atras_o)
         fact1_00, fact1_00_ = verify(len(fr1_f), len(at1_f), len(p2_f), len(p3_f))
-        return objective(len(p1_f), soma_00_f, tot_e) - pow(10, 7) * fact1_00_, fact1_00
+        return objective(len(p1_f), soma_00_f, tot_e*max(n_o)+1) - pow(10, 7) * fact1_00_, fact1_00
 
     if not fr and not at and not p2 and not p3:
         return converter_vetor_para_sala(vet0, n_o), f0
@@ -1155,7 +1155,7 @@ def initial_solution__(g, nos_com_grau_sorted, s9, r, n, coringa, carteiras_fren
 
     # ----------------------------------------------------------------------------------------------------
 
-    return sala_ini, objective(len(r1), r_d_sum, len(g.edges())), nao_neg(matriz)
+    return sala_ini, objective(len(r1), r_d_sum, len(g.edges())*max(n)+1), nao_neg(matriz)
 
 
 # Get the nodes involved in the conflicts
