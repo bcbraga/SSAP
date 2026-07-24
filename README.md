@@ -67,5 +67,5 @@ We are developing a scalable decision support tool based on the ILS heuristic, w
 
 For questions or contributions, please contact:
 
-* **Bruna Cristina Braga Charytitsch** – [bruna.braga@ga.ita.br](mailto:bruna.braga@ga.ita)
+* **Bruna Cristina Braga Charytitsch** – [bruna.braga@gp.ita.br](mailto:bruna.braga@ga.ita)
 * **Mariá Cristina Vasconcelos Nascimento** – [mariah@ita.br](mailto:mariah@ita.br)
